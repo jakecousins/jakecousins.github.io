@@ -6,10 +6,20 @@ body {
   padding: 1rem;
   background: #fdfdfd;
   color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
 }
 
 h1 {
   color: #004080;
+}
+
+body.dark-mode h1 {
+  color: #66aaff;
 }
 
 h2 {
@@ -17,6 +27,11 @@ h2 {
   padding-bottom: 0.3rem;
   margin-top: 2rem;
   color: #222;
+}
+
+body.dark-mode h2 {
+  border-color: #555;
+  color: #ddd;
 }
 
 img, video {
@@ -35,6 +50,10 @@ a:hover {
   text-decoration: underline;
 }
 
+body.dark-mode a {
+  color: #66aaff;
+}
+
 .project-link {
   display: block;
   background: #e6f0ff;
@@ -44,10 +63,17 @@ a:hover {
   border-radius: 5px;
   color: #003366;
   text-decoration: none;
+  transition: background 0.3s;
 }
 
 .project-link:hover {
   background: #d9ecff;
+}
+
+body.dark-mode .project-link {
+  background: #1e2a3a;
+  border-color: #3399ff;
+  color: #99ccff;
 }
 
 .back-link {
@@ -75,3 +101,74 @@ figcaption {
   margin-top: 0.5rem;
 }
 
+body.dark-mode figcaption {
+  color: #aaa;
+}
+
+/* Toggleable Gallery Grid Layout */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.gallery-grid figure {
+  flex: 1 1 300px;
+  max-width: 300px;
+  margin: 0;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid.gallery--stacked {
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-grid.gallery--stacked figure {
+  transform: scale(1.03);
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.gallery-grid figcaption {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Toggle Button Styling */
+#toggle-layout, #toggle-darkmode {
+  margin: 1rem 0.5rem 1rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#toggle-layout:hover, #toggle-darkmode:hover {
+  background-color: #0059b3;
+}
+
+body.dark-mode #toggle-layout,
+body.dark-mode #toggle-darkmode {
+  background-color: #222;
+  color: #eee;
+}
+
+body.dark-mode #toggle-layout:hover,
+body.dark-mode #toggle-darkmode:hover {
+  background-color: #444;
+}
