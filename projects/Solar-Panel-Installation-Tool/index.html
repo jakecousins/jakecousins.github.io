@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Solar Panel Installation Tool</title>
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
-
 
 <body>
   <h1>Solar Panel Installation Tool</h1>
@@ -23,29 +21,30 @@
   </ul>
 
   <h2>Gallery</h2>
-  
-  <figure>
-  <img src="slide_hammer.jpg" alt="Original Tool Used By Array">
-  <figcaption>Original tool used by Array for manual solar installs.</figcaption>
-</figure>
+  <button id="toggle-layout">Switch to Stacked View</button>
 
-  <figure>
-  <img src="clips.jpg" alt="Mounting Bracket Clips Used By Array">
-  <figcaption>Custom mounting bracket clips before redesign.</figcaption>
-</figure>
+  <div class="gallery-grid gallery--active" id="gallery">
+    <figure>
+      <img src="slide_hammer.jpg" alt="Original Tool Used By Array">
+      <figcaption>Original tool used by Array for manual solar installs.</figcaption>
+    </figure>
 
+    <figure>
+      <img src="clips.jpg" alt="Mounting Bracket Clips Used By Array">
+      <figcaption>Custom mounting bracket clips before redesign.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="tool-closeup.jpg" alt="Tool Detail">
+      <figcaption>Close-up of the clamping mechanism.</figcaption>
+    </figure>
+  </div>
 
   <h2>Demo Video</h2>
-  <!-- Replace demo.mp4 with your actual file name -->
   <video controls>
     <source src="demo.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
-
-  <!-- Or embed from YouTube instead -->
-  <!--
-  <iframe width="100%" height="400" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-  -->
 
   <h2>Technologies Used</h2>
   <ul>
@@ -55,5 +54,19 @@
   </ul>
 
   <a class="back-link" href="../../index.html">← Back to Main Site</a>
+
+  <script>
+    const toggleButton = document.getElementById("toggle-layout");
+    const gallery = document.getElementById("gallery");
+
+    toggleButton.addEventListener("click", () => {
+      gallery.classList.toggle("gallery--stacked");
+
+      const isStacked = gallery.classList.contains("gallery--stacked");
+      toggleButton.textContent = isStacked
+        ? "Switch to Gallery View"
+        : "Switch to Stacked View";
+    });
+  </script>
 </body>
 </html>
