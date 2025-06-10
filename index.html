@@ -9,6 +9,8 @@
 </head>
 
 <body>
+  <button id="toggle-darkmode">Toggle Dark Mode</button>
+
   <h1>Jacob Cousins</h1>
   <p><strong>Robotics Engineer</strong> • B.S. in Robotics Engineering, 2025</p>
 
@@ -25,27 +27,42 @@
     <li>Topics: PID control, SLAM, embedded systems, mechatronics</li>
   </ul>
 
-<h2>Projects</h2>
+  <h2>Projects</h2>
 
-<a class="project-link" href="projects/Solar-Panel-Installation-Tool/">
-  ☀️ Solar Panel Installation Tool – Custom hardware + automation for rapid setup
-</a>
+  <a class="project-link" href="projects/Solar-Panel-Installation-Tool/">
+    ☀️ Solar Panel Installation Tool – Custom hardware + automation for rapid setup
+  </a>
 
-<a class="project-link" href="projects/delivery-robot/">
-  🚗 Autonomous Delivery Robot – SLAM navigation using ROS
-</a>
+  <a class="project-link" href="projects/delivery-robot/">
+    🚗 Autonomous Delivery Robot – SLAM navigation using ROS
+  </a>
 
-<a class="project-link" href="projects/line-follower/">
-  📏 Line Following Robot – PID-tuned Arduino bot
-</a>
+  <a class="project-link" href="projects/line-follower/">
+    📏 Line Following Robot – PID-tuned Arduino bot
+  </a>
 
-<a class="project-link" href="projects/object-tracker/">
-  🎯 Object Tracking Camera – Real-time OpenCV tracking
-</a>
-
+  <a class="project-link" href="projects/object-tracker/">
+    🎯 Object Tracking Camera – Real-time OpenCV tracking
+  </a>
 
   <div class="contact">
     📫 Email: jacob@example.com • GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a>
   </div>
+
+  <script>
+    // Apply saved dark mode preference
+    const prefersDark = localStorage.getItem("theme") === "dark";
+    if (prefersDark) document.body.classList.add("dark-mode");
+
+    // Toggle dark mode button
+    const darkToggle = document.getElementById("toggle-darkmode");
+    if (darkToggle) {
+      darkToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      });
+    }
+  </script>
 </body>
 </html>
