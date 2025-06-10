@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,6 +9,8 @@
 </head>
 
 <body>
+  <button id="toggle-darkmode">Toggle Dark Mode</button>
+
   <h1>Solar Panel Installation Tool</h1>
 
   <p><strong>Overview:</strong> This custom-built tool streamlines the process of solar panel installation by combining automated positioning, ergonomic handling, and precision placement features. Designed as part of a robotics engineering project focused on renewable energy deployment.</p>
@@ -21,8 +24,6 @@
   </ul>
 
   <h2>Gallery</h2>
-  <button id="toggle-layout">Switch to Stacked View</button>
-
   <div class="gallery-grid gallery--active" id="gallery">
     <figure>
       <img src="slide_hammer.jpg" alt="Original Tool Used By Array">
@@ -56,17 +57,17 @@
   <a class="back-link" href="../../index.html">← Back to Main Site</a>
 
   <script>
-    const toggleButton = document.getElementById("toggle-layout");
-    const gallery = document.getElementById("gallery");
+    const prefersDark = localStorage.getItem("theme") === "dark";
+    if (prefersDark) document.body.classList.add("dark-mode");
 
-    toggleButton.addEventListener("click", () => {
-      gallery.classList.toggle("gallery--stacked");
-
-      const isStacked = gallery.classList.contains("gallery--stacked");
-      toggleButton.textContent = isStacked
-        ? "Switch to Gallery View"
-        : "Switch to Stacked View";
-    });
+    const darkToggle = document.getElementById("toggle-darkmode");
+    if (darkToggle) {
+      darkToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      });
+    }
   </script>
 </body>
 </html>
