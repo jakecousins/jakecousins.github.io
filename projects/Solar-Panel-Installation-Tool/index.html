@@ -104,18 +104,30 @@
       });
     }
 
-    // Gallery layout toggle
+    // Gallery layout toggle with memory
     const layoutToggle = document.getElementById("toggle-layout");
     const gallery = document.getElementById("gallery");
-    if (layoutToggle && gallery) {
-      layoutToggle.addEventListener("click", () => {
-        gallery.classList.toggle("gallery--stacked");
-        const isStacked = gallery.classList.contains("gallery--stacked");
-        layoutToggle.textContent = isStacked
-          ? "Switch to Gallery View"
-          : "Switch to Stacked View";
-      });
+
+    function applyGalleryPreference() {
+      const savedLayout = localStorage.getItem("galleryLayout");
+      if (savedLayout === "stacked") {
+        gallery.classList.add("gallery--stacked");
+        layoutToggle.textContent = "Switch to Gallery View";
+      } else {
+        gallery.classList.remove("gallery--stacked");
+        layoutToggle.textContent = "Switch to Stacked View";
+      }
     }
+
+    applyGalleryPreference();
+
+    layoutToggle?.addEventListener("click", () => {
+      const isStacked = gallery.classList.toggle("gallery--stacked");
+      layoutToggle.textContent = isStacked
+        ? "Switch to Gallery View"
+        : "Switch to Stacked View";
+      localStorage.setItem("galleryLayout", isStacked ? "stacked" : "gallery");
+    });
   </script>
 </body>
 
