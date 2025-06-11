@@ -84,7 +84,8 @@ html.dark-mode .project-link {
 }
 
 figure {
-  max-width: 500px;
+  width: 100%;
+  max-width: 100%;
   margin: 1rem auto;
   text-align: center;
 }
@@ -130,7 +131,8 @@ html.dark-mode figcaption {
 }
 
 .gallery-grid.gallery--stacked figure {
-  max-width: 500px;
+  flex: 1 1 auto;
+  max-width: 100%;
   transform: scale(1.03);
 }
 
