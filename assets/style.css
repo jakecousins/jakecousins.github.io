@@ -129,6 +129,7 @@ html.dark-mode figcaption {
 }
 
 .gallery-grid.gallery--stacked figure {
+  max-width: 500px;
   transform: scale(1.03);
 }
 
@@ -190,6 +191,14 @@ html.dark-mode #toggle-darkmode:hover {
   }
 
   figure {
+    max-width: 100%;
+  }
+
+  .gallery-grid.gallery--stacked figure {
+    max-width: 100%;
+  }
+
+  .gallery-grid figure {
     max-width: 100%;
   }
 }
