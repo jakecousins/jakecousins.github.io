@@ -1,7 +1,8 @@
 /* /assets/style.css */
 html, body {
   font-family: Arial, sans-serif;
-  max-width: 800px;
+  width: 90%;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1rem;
   transition: background-color 0.3s, color 0.3s;
@@ -116,8 +117,8 @@ html.dark-mode figcaption {
 }
 
 .gallery-grid figure {
-  flex: 1 1 300px;
-  max-width: 300px;
+  flex: 1 1 250px;
+  max-width: 250px;
   margin: 0;
   text-align: center;
   transition: transform 0.3s ease;
@@ -177,6 +178,7 @@ html.dark-mode #toggle-darkmode:hover {
 /* Responsive Adjustments for Mobile */
 @media (max-width: 600px) {
   html, body {
+    width: 95%;
     padding: 0.5rem;
     font-size: 0.95rem;
   }
@@ -194,10 +196,7 @@ html.dark-mode #toggle-darkmode:hover {
     max-width: 100%;
   }
 
-  .gallery-grid.gallery--stacked figure {
-    max-width: 100%;
-  }
-
+  .gallery-grid.gallery--stacked figure,
   .gallery-grid figure {
     max-width: 100%;
   }
