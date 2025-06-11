@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script>
-  if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.classList.add("dark-mode");
-  }
-</script>
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Solar Panel Installation Tool</title>
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  </script>
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
 
 <body>
   <button id="toggle-darkmode">Toggle Dark Mode</button>
+  <button id="toggle-layout">Switch to Stacked View</button>
 
   <h1>Solar Panel Installation Tool</h1>
 
@@ -29,7 +30,6 @@
   </ul>
 
   <h2>Gallery</h2>
-  <button id="toggle-layout">Switch to Stacked View</button>
   <div class="gallery-grid gallery--active" id="gallery">
     <figure>
       <img src="slide_hammer.jpg" alt="Original Tool Used By Array">
@@ -63,33 +63,29 @@
   <a class="back-link" href="../../index.html">← Back to Main Site</a>
 
   <script>
-  // Apply saved dark mode preference
-  const prefersDark = localStorage.getItem("theme") === "dark";
-  if (prefersDark) document.body.classList.add("dark-mode");
+    // Dark mode toggle
+    const darkToggle = document.getElementById("toggle-darkmode");
+    if (darkToggle) {
+      darkToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark-mode");
+        const isDark = document.documentElement.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      });
+    }
 
-  // Dark mode toggle button
-  const darkToggle = document.getElementById("toggle-darkmode");
-  if (darkToggle) {
-    darkToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      const isDark = document.body.classList.contains("dark-mode");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-  }
-
-  // Gallery layout toggle
-  const layoutToggle = document.getElementById("toggle-layout");
-  const gallery = document.getElementById("gallery");
-
-  if (layoutToggle && gallery) {
-    layoutToggle.addEventListener("click", () => {
-      gallery.classList.toggle("gallery--stacked");
-      const isStacked = gallery.classList.contains("gallery--stacked");
-      layoutToggle.textContent = isStacked
-        ? "Switch to Gallery View"
-        : "Switch to Stacked View";
-    });
-  }
-</script>
+    // Gallery layout toggle
+    const layoutToggle = document.getElementById("toggle-layout");
+    const gallery = document.getElementById("gallery");
+    if (layoutToggle && gallery) {
+      layoutToggle.addEventListener("click", () => {
+        gallery.classList.toggle("gallery--stacked");
+        const isStacked = gallery.classList.contains("gallery--stacked");
+        layoutToggle.textContent = isStacked
+          ? "Switch to Gallery View"
+          : "Switch to Stacked View";
+      });
+    }
+  </script>
 </body>
+
 </html>
