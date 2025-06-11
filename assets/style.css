@@ -2,7 +2,7 @@
 html, body {
   font-family: Arial, sans-serif;
   width: 90%;
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 1rem;
   transition: background-color 0.3s, color 0.3s;
@@ -205,7 +205,7 @@ html.dark-mode #toggle-darkmode:hover {
 /* Larger images for desktop gallery view */
 @media (min-width: 1000px) {
   .gallery-grid figure {
-    flex: 1 1 300px;
-    max-width: 300px;
+    flex: 1 1 500px;
+    max-width: 500px;
   }
 }
