@@ -1,16 +1,16 @@
 /* /assets/style.css */
-body {
+html, body {
   font-family: Arial, sans-serif;
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 1rem;
-  background: #fdfdfd;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #fdfdfd;
   color: #333;
-  transition: background 0.3s, color 0.3s;
 }
 
-html.dark-mode {
-  background: #121212;
+html.dark-mode, html.dark-mode body {
+  background-color: #121212;
   color: #e0e0e0;
 }
 
