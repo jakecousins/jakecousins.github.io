@@ -201,3 +201,11 @@ html.dark-mode #toggle-darkmode:hover {
     max-width: 100%;
   }
 }
+
+/* Larger images for desktop gallery view */
+@media (min-width: 1000px) {
+  .gallery-grid figure {
+    flex: 1 1 300px;
+    max-width: 300px;
+  }
+}
