@@ -9,7 +9,7 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-body.dark-mode {
+html.dark-mode {
   background: #121212;
   color: #e0e0e0;
 }
@@ -18,7 +18,7 @@ h1 {
   color: #004080;
 }
 
-body.dark-mode h1 {
+html.dark-mode h1 {
   color: #66aaff;
 }
 
@@ -29,7 +29,7 @@ h2 {
   color: #222;
 }
 
-body.dark-mode h2 {
+html.dark-mode h2 {
   border-color: #555;
   color: #ddd;
 }
@@ -50,7 +50,7 @@ a:hover {
   text-decoration: underline;
 }
 
-body.dark-mode a {
+html.dark-mode a {
   color: #66aaff;
 }
 
@@ -70,7 +70,7 @@ body.dark-mode a {
   background: #d9ecff;
 }
 
-body.dark-mode .project-link {
+html.dark-mode .project-link {
   background: #1e2a3a;
   border-color: #3399ff;
   color: #99ccff;
@@ -101,7 +101,7 @@ figcaption {
   margin-top: 0.5rem;
 }
 
-body.dark-mode figcaption {
+html.dark-mode figcaption {
   color: #aaa;
 }
 
@@ -162,13 +162,13 @@ body.dark-mode figcaption {
   background-color: #0059b3;
 }
 
-body.dark-mode #toggle-layout,
-body.dark-mode #toggle-darkmode {
+html.dark-mode #toggle-layout,
+html.dark-mode #toggle-darkmode {
   background-color: #222;
   color: #eee;
 }
 
-body.dark-mode #toggle-layout:hover,
-body.dark-mode #toggle-darkmode:hover {
+html.dark-mode #toggle-layout:hover,
+html.dark-mode #toggle-darkmode:hover {
   background-color: #444;
 }
