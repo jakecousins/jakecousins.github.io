@@ -13,17 +13,28 @@
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
     #toggle-darkmode {
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #004080;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     #toggle-darkmode.clicked {
       transform: scale(1.15);
     }
+
+    html.dark-mode #toggle-darkmode {
+      background-color: #222;
+    }
   </style>
 </head>
 
 <body>
-  <button id="toggle-darkmode">🌞 Light Mode</button>
+  <button id="toggle-darkmode">🌙 Dark Mode</button>
 
   <h1>Jacob Cousins</h1>
   <p><strong>Robotics Engineer</strong> • B.S. in Robotics Engineering, 2025</p>
@@ -67,7 +78,7 @@
     const darkToggle = document.getElementById("toggle-darkmode");
     function updateToggleLabel() {
       const isDark = document.documentElement.classList.contains("dark-mode");
-      darkToggle.textContent = isDark ? "🌙 Dark Mode" : "🌞 Light Mode";
+      darkToggle.textContent = isDark ? "🌞 Light Mode" : "🌙 Dark Mode";
     }
 
     if (darkToggle) {
