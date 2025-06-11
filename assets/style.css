@@ -172,3 +172,24 @@ html.dark-mode #toggle-layout:hover,
 html.dark-mode #toggle-darkmode:hover {
   background-color: #444;
 }
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 600px) {
+  html, body {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-link {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  figure {
+    max-width: 100%;
+  }
+}
