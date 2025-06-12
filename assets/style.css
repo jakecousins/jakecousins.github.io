@@ -187,6 +187,27 @@ html.dark-mode #toggle-darkmode:hover {
   margin: 2rem 0;
 }
 
+.image-row figure {
+  flex: 1 1 250px;
+  max-width: 250px;
+  margin: 0;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1000px) {
+  .gallery-grid figure,
+  .image-row figure {
+    flex: 1 1 500px;
+    max-width: 500px;
+  }
+
+  .gallery-grid.gallery--stacked figure {
+    flex: 1 1 600px;
+    max-width: 600px;
+  }
+}
+
 /* Responsive Adjustments for Mobile */
 @media (max-width: 600px) {
   html, body {
@@ -206,20 +227,8 @@ html.dark-mode #toggle-darkmode:hover {
 
   figure,
   .gallery-grid.gallery--stacked figure,
-  .gallery-grid figure {
+  .gallery-grid figure,
+  .image-row figure {
     max-width: 100%;
-  }
-}
-
-/* Larger images for desktop gallery view */
-@media (min-width: 1000px) {
-  .gallery-grid figure {
-    flex: 1 1 500px;
-    max-width: 500px;
-  }
-
-  .gallery-grid.gallery--stacked figure {
-    flex: 1 1 600px;
-    max-width: 600px;
   }
 }
