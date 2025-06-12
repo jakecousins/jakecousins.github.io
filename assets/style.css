@@ -84,9 +84,11 @@ html.dark-mode .project-link {
 }
 
 figure {
-  width: 100%;
-  margin: 1rem auto;
+  margin: 1rem;
   text-align: center;
+  flex: 1 1 250px;
+  max-width: 250px;
+  transition: transform 0.3s ease;
 }
 
 figure img {
@@ -176,6 +178,15 @@ html.dark-mode #toggle-darkmode:hover {
   background-color: #444;
 }
 
+/* Flex wrapper for general image rows */
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
 /* Responsive Adjustments for Mobile */
 @media (max-width: 600px) {
   html, body {
@@ -193,10 +204,7 @@ html.dark-mode #toggle-darkmode:hover {
     padding: 0.75rem;
   }
 
-  figure {
-    max-width: 100%;
-  }
-
+  figure,
   .gallery-grid.gallery--stacked figure,
   .gallery-grid figure {
     max-width: 100%;
