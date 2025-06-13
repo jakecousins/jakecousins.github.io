@@ -235,16 +235,19 @@ html.dark-mode #toggle-darkmode:hover {
 
 /* Custom image size classes */
 .img-small {
-  width: 300px !important;
+  width: 100%;
+  max-width: 300px;
   height: auto;
 }
 
 .img-medium {
-  width: 400px !important;
+  width: 100%;
+  max-width: 400px;
   height: auto;
 }
 
 .img-large {
-  width: 600px !important;
+  width: 100%;
+  max-width: 600px;
   height: auto;
 }
