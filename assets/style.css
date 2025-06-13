@@ -232,3 +232,19 @@ html.dark-mode #toggle-darkmode:hover {
     max-width: 100%;
   }
 }
+
+/* Custom image size classes */
+.img-small {
+  width: 300px !important;
+  height: auto;
+}
+
+.img-medium {
+  width: 400px !important;
+  height: auto;
+}
+
+.img-large {
+  width: 600px !important;
+  height: auto;
+}
