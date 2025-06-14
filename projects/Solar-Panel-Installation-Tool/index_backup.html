@@ -1,0 +1,248 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solar Panel Installation Tool</title>
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  </script>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    #toggle-darkmode {
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #004080;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #toggle-darkmode.clicked {
+      transform: scale(1.15);
+    }
+
+    html.dark-mode #toggle-darkmode {
+      background-color: #222;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="toggle-darkmode">🌙 Dark Mode</button>
+
+  <h1>Solar Panel Installation Tool</h1>
+
+  <p><strong>Overview:</strong> This custom-built tool streamlines the process of solar panel installation by combining automated positioning, ergonomic handling, and precision placement features. Designed as part of a robotics engineering project focused on renewable energy deployment.</p>
+
+  <h2>Design Features</h2>
+  <ul>
+    <li>Mechanical arm with adjustable clamping for panel alignment</li>
+    <li>Integrated angle/tilt calibration system</li>
+    <li>Assistive user interface for guided installation steps</li>
+    <li>Foldable frame for portability and quick setup</li>
+  </ul>
+
+  <h2><strong>Problem Description:</strong></h1>
+      <p> We were tasked by array technologies to take there manual slide hammer tool and make something that would be easier and less physically demanding to use. So we came up with a design that utilizes an off-the-shelf battery powered automatic tool and retrofitted it to fit our needs.</p>
+  <br>
+    <p> These are some pictures of their manual slide hammer tool</p>
+  
+  <div class="image-row">
+  <figure>
+      <img src="slide_hammer2.jpg" alt="">
+      <figcaption>Original tool used by Array for manual solar installs.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="clips.jpg" alt="">
+      <figcaption>Custom mounting bracket clips before redesign.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="mounting_bracket.jpg" alt="">
+      <figcaption>This is the mounting bracket that the solar panels are installed on using the clips.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="tool_head.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+    </div>
+  
+  <p> We took the skil auto hammer, which is a tool originally desinged for driving nails into wood, and modified the barrel of it to allow us to use the slide hammer tool head. The skil auto hammer uses a rapid firing piston for its original purpose, but this is also exactly what we needed to help us drive the clips into the solar panel mounting brackets.</p>
+  
+  <div class="image-row">
+   <figure>
+      <img src="skil_hammer.jpg" class="img-medium" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="full_cad_render.jpg" class="img-medium" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+    
+    <figure>
+      <img src="sliced_cad_render.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="cad_screw_nut.png" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="tool_head_assembly.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="tool_head_assembly2.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assembled_tool.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+    </div>
+
+  <h2>Gallery</h2>
+  <button id="toggle-layout">Switch to Stacked View</button>
+  <div class="gallery-grid gallery--active" id="gallery">
+    <figure>
+      <img src="slide_hammer2.jpg" alt="Original Tool Used By Array">
+      <figcaption>Original tool used by Array for manual solar installs.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="clips.jpg" alt="Mounting Bracket Clips Used By Array">
+      <figcaption>Custom mounting bracket clips before redesign.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="mounting_bracket.jpg" alt="">
+      <figcaption>This is the mounting bracket that the solar panels are installed on using the clips.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="tool_head.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="skil_hammer.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="full_cad_render.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="cad_screw_nut.png" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="tool_head_assembly.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="tool_head_assembly2.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assembled_tool.jpg" alt="">
+      <figcaption>placeholder</figcaption>
+    </figure>
+  </div>
+
+  <h2>Demo Videos</h2>
+<figure>
+  <figcaption><strong>Slide Hammer (Original Tool)</strong></figcaption>
+  <video controls>
+    <source src="Final Test Videos_Slide Hammer.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>This video shows the original manual slide hammer tool in use during solar panel installation.</figcaption>
+</figure>
+
+<figure>
+  <figcaption><strong>Our Custom Installation Tool</strong></figcaption>
+  <video controls>
+    <source src="Final Test Videos_Our Tool.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>This video demonstrates our redesigned tool featuring automation and improved ergonomics.</figcaption>
+</figure>
+
+
+  <h2>Technologies Used</h2>
+  <ul>
+    <li>3D printed components and aluminum framing</li>
+    <li>Raspberry Pi with Python control scripts</li>
+    <li>Sensor feedback system for angle measurement</li>
+  </ul>
+
+  <a class="back-link" href="../../index.html">← Back to Main Site</a>
+
+  <script>
+    // Dark mode toggle
+    const darkToggle = document.getElementById("toggle-darkmode");
+    function updateToggleLabel() {
+      const isDark = document.documentElement.classList.contains("dark-mode");
+      darkToggle.textContent = isDark ? "🌞 Light Mode" : "🌙 Dark Mode";
+    }
+
+    if (darkToggle) {
+      updateToggleLabel();
+
+      darkToggle.addEventListener("click", () => {
+        darkToggle.classList.add("clicked");
+        setTimeout(() => darkToggle.classList.remove("clicked"), 150);
+
+        document.documentElement.classList.toggle("dark-mode");
+        const isDark = document.documentElement.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateToggleLabel();
+      });
+    }
+
+    // Gallery layout toggle with memory
+    const layoutToggle = document.getElementById("toggle-layout");
+    const gallery = document.getElementById("gallery");
+
+    function applyGalleryPreference() {
+      const savedLayout = localStorage.getItem("galleryLayout");
+      if (savedLayout === "stacked") {
+        gallery.classList.add("gallery--stacked");
+        layoutToggle.textContent = "Switch to Gallery View";
+      } else {
+        gallery.classList.remove("gallery--stacked");
+        layoutToggle.textContent = "Switch to Stacked View";
+      }
+    }
+
+    applyGalleryPreference();
+
+    layoutToggle?.addEventListener("click", () => {
+      const isStacked = gallery.classList.toggle("gallery--stacked");
+      layoutToggle.textContent = isStacked
+        ? "Switch to Gallery View"
+        : "Switch to Stacked View";
+      localStorage.setItem("galleryLayout", isStacked ? "stacked" : "gallery");
+    });
+  </script>
+</body>
+
+</html>
