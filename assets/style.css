@@ -51,16 +51,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Larger, responsive video player */
-figure video {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-}
-
-
 html.dark-mode a {
   color: #66aaff;
 }
@@ -245,19 +235,25 @@ html.dark-mode #toggle-darkmode:hover {
 
 /* Custom image size classes */
 .img-small {
-  width: 100%;
-  max-width: 300px;
+  width: 300px !important;
   height: auto;
 }
 
 .img-medium {
-  width: 100%;
-  max-width: 400px;
+  width: 400px !important;
   height: auto;
 }
 
 .img-large {
-  width: 100%;
-  max-width: 600px;
+  width: 600px !important;
   height: auto;
+}
+
+/* Larger, responsive video player */
+figure video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
