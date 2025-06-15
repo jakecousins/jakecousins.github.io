@@ -285,3 +285,8 @@ figure video {
   max-width: 1000px;    /* or whatever upper limit you want */
 }
 
+figure:has(video) {
+  max-width: 1000px !important; /* or whatever width you want */
+}
+
+
