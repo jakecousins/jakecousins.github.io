@@ -49,7 +49,7 @@ video {
   max-width: 1000px;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
 }
 
 a {
@@ -98,6 +98,8 @@ figure {
   text-align: center;
   flex: 1 1 250px;
   transition: transform 0.3s ease;
+  max-width: 1000px;
+  margin: 2rem auto;
 }
 
 figure img {
@@ -105,6 +107,15 @@ figure img {
   height: auto;
   border-radius: 6px;
   max-width: 250px;
+}
+
+figure video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
 }
 
 figcaption {
@@ -239,6 +250,10 @@ html.dark-mode #toggle-darkmode:hover {
   .gallery-grid.gallery--stacked figure,
   .gallery-grid figure,
   .image-row figure {
+    max-width: 100%;
+  }
+
+  video {
     max-width: 100%;
   }
 }
