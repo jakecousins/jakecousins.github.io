@@ -223,8 +223,8 @@ html.dark-mode #toggle-darkmode:hover {
   /* Desktop-sized gallery and image row sizing */
   .gallery-grid figure,
   .image-row figure {
-    flex: 1 1 500px; /* <- Adjust desktop gallery/image row flex */
-    max-width: 500px; /* <- Adjust desktop gallery/image row max width */
+    flex: 1 1 400px; /* <- Adjust desktop gallery/image row flex */
+    max-width: 400px; /* <- Adjust desktop gallery/image row max width */
   }
 
   .gallery-grid.gallery--stacked figure {
