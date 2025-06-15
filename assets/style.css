@@ -94,18 +94,20 @@ html.dark-mode .project-link {
 }
 
 figure {
-  margin: 2rem auto;
+  margin: 1rem;
   text-align: center;
-  flex: 1 1 600px;
-  max-width: 600px;
+  flex: 1 1 250px;
   transition: transform 0.3s ease;
+  max-width: 1000px;
+  margin: 2rem auto;
 }
 
+/* Default figure image size */
 figure img {
   width: 100%;
   height: auto;
   border-radius: 6px;
-  max-width: 100%;
+  max-width: 250px; /* <- Adjust default figure image size here */
 }
 
 figure video {
@@ -138,9 +140,10 @@ html.dark-mode figcaption {
   transition: all 0.3s ease;
 }
 
+/* Gallery view figure sizing */
 .gallery-grid figure {
-  flex: 1 1 250px;
-  max-width: 250px;
+  flex: 1 1 250px; /* <- Adjust gallery image flex basis */
+  max-width: 250px; /* <- Adjust gallery image max size */
   margin: 0;
   text-align: center;
   transition: transform 0.3s ease;
@@ -207,15 +210,17 @@ html.dark-mode #toggle-darkmode:hover {
   margin: 2rem 0;
 }
 
+/* Image row figure sizing */
 .image-row figure {
-  flex: 1 1 500px;
-  max-width: 500px;
+  flex: 1 1 500px; /* <- Adjust image row flex basis here */
+  max-width: 500px; /* <- Adjust image row max width here */
   margin: 0;
   text-align: center;
   transition: transform 0.3s ease;
 }
 
 @media (min-width: 1000px) {
+  /* Desktop-sized gallery and image row sizing */
   .gallery-grid figure,
   .image-row figure {
     flex: 1 1 500px;
@@ -259,16 +264,16 @@ html.dark-mode #toggle-darkmode:hover {
 
 /* Custom image size classes */
 .img-small {
-  width: 300px !important;
+  width: 300px !important; /* <- Small image preset */
   height: auto;
 }
 
 .img-medium {
-  width: 400px !important;
+  width: 400px !important; /* <- Medium image preset */
   height: auto;
 }
 
 .img-large {
-  width: 600px !important;
+  width: 600px !important; /* <- Large image preset */
   height: auto;
 }
