@@ -262,20 +262,29 @@ html.dark-mode #toggle-darkmode:hover {
   }
 }
 
-/* Custom image size classes */
+/* Custom image size classes with flexbox compatibility */
 .img-small {
-  width: 300px !important; /* <- Small image preset */
+  width: 300px !important;
   height: auto;
+  flex: 0 0 auto;
+  align-self: center;
+  max-width: none !important;
 }
 
 .img-medium {
-  width: 400px !important; /* <- Medium image preset */
+  width: 400px !important;
   height: auto;
+  flex: 0 0 auto;
+  align-self: center;
+  max-width: none !important;
 }
 
 .img-large {
-  width: 600px !important; /* <- Large image preset */
+  width: 600px !important;
   height: auto;
+  flex: 0 0 auto;
+  align-self: center;
+  max-width: none !important;
 }
 
 /* Allow videos to break out of figure size limits */
@@ -287,6 +296,19 @@ figure video {
 
 figure:has(video) {
   max-width: 1000px !important; /* or whatever width you want */
+}
+
+/* Optional: Keep figure wrappers close to the image size */
+.image-row figure:has(img.img-small) {
+  max-width: 350px;
+}
+
+.image-row figure:has(img.img-medium) {
+  max-width: 400px;
+}
+
+.image-row figure:has(img.img-large) {
+  max-width: 600px;
 }
 
 
