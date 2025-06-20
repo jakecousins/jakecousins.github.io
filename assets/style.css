@@ -289,7 +289,6 @@ html.dark-mode #toggle-darkmode:hover {
 
 /* Allow videos to break out of figure size limits */
 figure video {
-  max-width: none;      /* remove inherited 500px cap */
   width: 100%;
   max-width: 1000px;    /* or whatever upper limit you want */
 }
