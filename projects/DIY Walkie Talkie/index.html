@@ -1,0 +1,161 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DIY Walkie Talkie</title>
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  </script>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    #toggle-darkmode {
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #004080;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #toggle-darkmode.clicked {
+      transform: scale(1.15);
+    }
+
+    html.dark-mode #toggle-darkmode {
+      background-color: #222;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="back-link" href="../../index.html">← Back to Main Site</a> 
+  <br>
+  <button id="toggle-darkmode">🌙 Dark Mode</button>
+  
+  
+
+  <h1>DIY Walkie Talkie</h1>
+
+  <h2><strong>Problem Description:</strong></h1>
+    <p>Our team was tasked with creating some sort of device based on preset a list of certain ideas. We chose to try and create a DIY Walkie Talkie out of very basic components. This device could use some small invididual components on their own PCB but we were not to create one singular PCB with all components and connections, everything had to be done on a breadboard.</p>
+
+  <h2>Design Features</h2>
+  <ul>
+    <li>Speaker</li>
+    <li>Microphone</li>
+    <li>Volume Adjustment Knob</li>
+    <li>Freqency Adjustmnet Not</li>
+    <li>Antenna</li>
+  </ul>
+
+  
+  <br>
+    <p>Here is an image of our schematic</p>
+  
+  <div class="image-row">
+  <figure>
+      <img src="Schematic.png" alt="">
+      <figcaption> </figcaption>
+    </figure>
+  </div>
+  
+  <h2>List of Components Used</h2>
+  <ul>
+    <li>1k Ohm Resistor – 2 units</li>
+    <li>1uF Capacitor – 1 unit</li>
+    <li>2.2uF Capacitor – 4 units</li>
+    <li>10pF Capacitor – 4 units</li>
+    <li>0.1uF Capacitor – 2 units</li>
+    <li>9V / 500mAh Battery – 1 unit</li>
+    <li>12 Ohm Speaker – 1 unit</li>
+    <li>50k Ohm Resistor – 2 units</li>
+    <li>75k Ohm Resistor – 2 units</li>
+    <li>100k Ohm Resistor – 8 units</li>
+    <li>Crystal Oscillator 8MHz ABM3B – 1 unit</li>
+    <li>Electret Microphone – 1 unit</li>
+    <li>Mixer IC SA612AN – 1 unit</li>
+    <li>Op Amp LM386 – 2 units</li>
+    <li>Op Amp NE5534 – 2 units</li>
+    <li>RF Antenna – 1 unit</li>
+  </ul>
+
+   
+  <h2><strong>The Final Product:</strong></h1>
+  <p> Here is a picture of our final design. It was a relatively straight forward process to follow the schematic and connect everything approriatly. </p>
+  
+  <br>
+  
+  <div class="image-row">
+    
+    <figure>
+      <img src="Final_Breadboard.png" alt="">
+      <figcaption> </figcaption>
+    </figure>
+
+    
+  </div>
+  
+     
+
+  <h2><strong>Conclusion:</strong></h1>
+  <p>While this device is very basic it worked properly based on our testing using an osiolloscope and in practical tests over range. It did not have the most robust range or the best audio, but given the limitations imposed on us and the very basic components used we were quite happy with the result of this project.</p>
+ 
+  
+
+  <a class="back-link" href="../../index.html">← Back to Main Site</a>
+
+  <script>
+    // Dark mode toggle
+    const darkToggle = document.getElementById("toggle-darkmode");
+    function updateToggleLabel() {
+      const isDark = document.documentElement.classList.contains("dark-mode");
+      darkToggle.textContent = isDark ? "🌞 Light Mode" : "🌙 Dark Mode";
+    }
+
+    if (darkToggle) {
+      updateToggleLabel();
+
+      darkToggle.addEventListener("click", () => {
+        darkToggle.classList.add("clicked");
+        setTimeout(() => darkToggle.classList.remove("clicked"), 150);
+
+        document.documentElement.classList.toggle("dark-mode");
+        const isDark = document.documentElement.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateToggleLabel();
+      });
+    }
+
+    // Gallery layout toggle with memory
+    const layoutToggle = document.getElementById("toggle-layout");
+    const gallery = document.getElementById("gallery");
+
+    function applyGalleryPreference() {
+      const savedLayout = localStorage.getItem("galleryLayout");
+      if (savedLayout === "stacked") {
+        gallery.classList.add("gallery--stacked");
+        layoutToggle.textContent = "Switch to Gallery View";
+      } else {
+        gallery.classList.remove("gallery--stacked");
+        layoutToggle.textContent = "Switch to Stacked View";
+      }
+    }
+
+    applyGalleryPreference();
+
+    layoutToggle?.addEventListener("click", () => {
+      const isStacked = gallery.classList.toggle("gallery--stacked");
+      layoutToggle.textContent = isStacked
+        ? "Switch to Gallery View"
+        : "Switch to Stacked View";
+      localStorage.setItem("galleryLayout", isStacked ? "stacked" : "gallery");
+    });
+  </script>
+</body>
+
+</html>
