@@ -1,1 +1,157 @@
+ <html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emergency Battery Pack</title>
+  <script>
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark-mode");
+    }
+  </script>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    #toggle-darkmode {
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #004080;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #toggle-darkmode.clicked {
+      transform: scale(1.15);
+    }
+
+    html.dark-mode #toggle-darkmode {
+      background-color: #222;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="back-link" href="../../index.html">← Back to Main Site</a> 
+  <br>
+  <button id="toggle-darkmode">🌙 Dark Mode</button>
+  
+  
+
+  <h1>Emergency Battery Pack</h1>
+
+  <h2><strong>Problem Description:</strong></h1>
+    <p>All throughout history natural disasters have been a constant. Regardless of how many years pass and how much our technology improves there will always be some sort of unfortunate event that claims the lives of many innocent people due to mother nature. To that end we were tasked with trying to create the concept of a device that can aid first responders during the inital effort of rescuing as many people as possible. We needed to try and create something that solves a core problem when a disaster strikes, and that is power. Once an area is hit, the power inevitably ceases to function for potentially long periods of time and that can be a massive problem for the many tools a first responder can use in order to save people. With no easy way to plug into the grid we had to come up with some solution to that.</p>
+
+  <h2>Design Features</h2>
+  <ul>
+    <li>Large and durable battery</li>
+    <li>LED Light to indicate its level of charge</li>
+    <li>Retractable extension cable to plug devices in</li>
+    <li>Various ports to allow other devices to be plugged in</li>
+    <li>Backpack straps for easy carrying</li>
+    <li>Weatherproofed exterior to withstand any environment</li>
+    
+  </ul>
+
+  
+  <br>
+    <p> Here are a few pictures of our overrall design concept</p>
+  
+  <div class="image-row">
+  <figure>
+      <img src="Picture1.png" alt="">
+    </figure>
+    
+    <figure>
+      <img src="Picture2.png" alt="">
+    </figure>
+    
+    <figure>
+      <img src="Picture3.png" alt="">
+    </figure>
+    
+    <figure>
+      <img src="Picture4.png" alt="">
+    </figure>
+  </div>
+   
+  <h2><strong>Our Solution:</strong></h1>
+  <p> We needed to make a device that was easy to use to allow not only first responders but the regular population to take our battery packs and use them. To that end we designed a sleek battery that would be big enough to hold a large charge of energy while also making it light enough to carry around. The overrall idea is that these battery packs could be dropped into a disaster zone and anyone could use them to help keep certain utilities powered until a more permenant solution for tha area is up and running. These packs would come in a pod of some kind that could be air dropped or hauled to an affected area. With a litteny of ports and plugs anyone should be able to plug any device into it and give it some power, once the power runs out they could deposit it back into the pod and it would recharge. There would need to be enough packs in the pod to facilitate a rotation of packs, so once one is brough back a person could take a fresh one. We would not want anyone to go without a battery pack if possible.</p>
+  
+  <br>
+  
+  <h2>Technologies Used</h2>
+  <ul>
+    <li>Tinkercad</li>
+    
+  </ul>
+  
+   <div class="image-row">
+    
+    <figure>
+      <img src="tinkercad.png" alt="">
+    </figure>
+     
+     
+  </div>
+
+  <h2><strong>Conclusion:</strong></h1>
+  <p> This project was purely conceptual in nature. We were not tasked with creating a working prototype, despite that if given the chance making this project a reality would be a great step forward into helping people during natural disasters. It would be quite a challenging project but a very fulfulling one.</p>
+ 
+  
+
+  <a class="back-link" href="../../index.html">← Back to Main Site</a>
+
+  <script>
+    // Dark mode toggle
+    const darkToggle = document.getElementById("toggle-darkmode");
+    function updateToggleLabel() {
+      const isDark = document.documentElement.classList.contains("dark-mode");
+      darkToggle.textContent = isDark ? "🌞 Light Mode" : "🌙 Dark Mode";
+    }
+
+    if (darkToggle) {
+      updateToggleLabel();
+
+      darkToggle.addEventListener("click", () => {
+        darkToggle.classList.add("clicked");
+        setTimeout(() => darkToggle.classList.remove("clicked"), 150);
+
+        document.documentElement.classList.toggle("dark-mode");
+        const isDark = document.documentElement.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateToggleLabel();
+      });
+    }
+
+    // Gallery layout toggle with memory
+    const layoutToggle = document.getElementById("toggle-layout");
+    const gallery = document.getElementById("gallery");
+
+    function applyGalleryPreference() {
+      const savedLayout = localStorage.getItem("galleryLayout");
+      if (savedLayout === "stacked") {
+        gallery.classList.add("gallery--stacked");
+        layoutToggle.textContent = "Switch to Gallery View";
+      } else {
+        gallery.classList.remove("gallery--stacked");
+        layoutToggle.textContent = "Switch to Stacked View";
+      }
+    }
+
+    applyGalleryPreference();
+
+    layoutToggle?.addEventListener("click", () => {
+      const isStacked = gallery.classList.toggle("gallery--stacked");
+      layoutToggle.textContent = isStacked
+        ? "Switch to Gallery View"
+        : "Switch to Stacked View";
+      localStorage.setItem("galleryLayout", isStacked ? "stacked" : "gallery");
+    });
+  </script>
+</body>
+
+</html>
 
