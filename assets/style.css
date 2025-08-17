@@ -103,11 +103,11 @@ figure {
 }
 
 /* Default figure image size */
+/* CHANGED: width:100% -> max-width:100% so manual sizes work */
 figure img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 6px;
-  max-width: 100%; /* <- Allow full width within figure */
 }
 
 figure video {
@@ -304,10 +304,25 @@ figure:has(video) {
 }
 
 .image-row figure:has(img.img-medium) {
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .image-row figure:has(img.img-large) {
   max-width: 600px;
 }
 
+/* Figure width utilities (container sizes) */
+figure.w-300 { max-width: 300px !important; }
+figure.w-400 { max-width: 400px !important; }
+figure.w-450 { max-width: 450px !important; }
+figure.w-500 { max-width: 500px !important; }
+figure.w-600 { max-width: 600px !important; }
+figure.w-800 { max-width: 800px !important; } /* use sparingly */
+
+/* Optional: only for image rows */
+.image-row figure.w-300 { max-width: 300px !important; }
+.image-row figure.w-400 { max-width: 400px !important; }
+.image-row figure.w-450 { max-width: 450px !important; }
+.image-row figure.w-500 { max-width: 500px !important; }
+.image-row figure.w-600 { max-width: 600px !important; }
+.image-row figure.w-800 { max-width: 800px !important; }
