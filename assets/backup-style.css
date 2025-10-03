@@ -1,0 +1,328 @@
+/* /assets/style.css */
+html, body {
+  font-family: Arial, sans-serif;
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+html.dark-mode, html.dark-mode body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+h1 {
+  color: #004080;
+}
+
+html.dark-mode h1 {
+  color: #66aaff;
+}
+
+h2 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+  color: #222;
+}
+
+html.dark-mode h2 {
+  border-color: #555;
+  color: #ddd;
+}
+
+img {
+  max-width: 100%;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+video {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+html.dark-mode a {
+  color: #66aaff;
+}
+
+.project-link {
+  display: block;
+  background: #e6f0ff;
+  border-left: 5px solid #0066cc;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  color: #003366;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.project-link:hover {
+  background: #d9ecff;
+}
+
+html.dark-mode .project-link {
+  background: #1e2a3a;
+  border-color: #3399ff;
+  color: #99ccff;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+figure {
+  margin: 1rem;
+  text-align: center;
+  flex: 1 1 600px; /* <- Restored original image figure width */
+  transition: transform 0.3s ease;
+  max-width: 600px; /* <- Restored original image figure max width */
+  margin: 2rem auto;
+}
+
+/* Default figure image size */
+/* CHANGED: width:100% -> max-width:100% so manual sizes work */
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+figure video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+html.dark-mode figcaption {
+  color: #aaa;
+}
+
+/* Toggleable Gallery Grid Layout */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+/* Gallery view figure sizing */
+.gallery-grid figure {
+  flex: 1 1 250px; /* <- Adjust gallery image flex basis */
+  max-width: 250px; /* <- Adjust gallery image max size */
+  margin: 0;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid.gallery--stacked {
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-grid.gallery--stacked figure {
+  flex: 1 1 500px;
+  max-width: 90%;
+  transform: scale(1.03);
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.gallery-grid figcaption {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Toggle Button Styling */
+#toggle-layout, #toggle-darkmode {
+  margin: 1rem 0.5rem 1rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#toggle-layout:hover, #toggle-darkmode:hover {
+  background-color: #0059b3;
+}
+
+html.dark-mode #toggle-layout,
+html.dark-mode #toggle-darkmode {
+  background-color: #222;
+  color: #eee;
+}
+
+html.dark-mode #toggle-layout:hover,
+html.dark-mode #toggle-darkmode:hover {
+  background-color: #444;
+}
+
+/* Flex wrapper for general image rows */
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+/* Image row figure sizing */
+.image-row figure {
+  flex: 1 1 400px; /* <- Adjust image row flex basis here */
+  max-width: 400px; /* <- Adjust image row max width here */
+  height: auto;
+  margin: 0;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1000px) {
+  /* Desktop-sized gallery and image row sizing */
+  .gallery-grid figure,
+  .image-row figure {
+    flex: 1 1 400px; /* <- Adjust desktop gallery/image row flex */
+    max-width: 400px; /* <- Adjust desktop gallery/image row max width */
+  }
+
+  .gallery-grid.gallery--stacked figure {
+    flex: 1 1 600px;
+    max-width: 600px;
+  }
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 600px) {
+  html, body {
+    width: 95%;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-link {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  figure,
+  .gallery-grid.gallery--stacked figure,
+  .gallery-grid figure,
+  .image-row figure {
+    max-width: 100%;
+  }
+
+  video {
+    max-width: 100%;
+  }
+}
+
+/* Custom image size classes with flexbox compatibility */
+.img-small {
+  width: 300px !important;
+  height: auto;
+  flex: 0 0 auto;
+  align-self: center;
+  max-width: none !important;
+}
+
+.img-medium {
+  width: 400px !important;
+  height: auto;
+  flex: 0 0 auto;
+  align-self: center;
+  max-width: none !important;
+}
+
+.img-large {
+  width: 600px !important;
+  height: auto;
+  flex: 0 0 auto;
+  align-self: center;
+  max-width: none !important;
+}
+
+/* Allow videos to break out of figure size limits */
+figure video {
+  width: 100%;
+  max-width: 1000px;    /* or whatever upper limit you want */
+}
+
+figure:has(video) {
+  max-width: 1000px !important; /* or whatever width you want */
+}
+
+/* Optional: Keep figure wrappers close to the image size */
+.image-row figure:has(img.img-small) {
+  max-width: 350px;
+}
+
+.image-row figure:has(img.img-medium) {
+  max-width: 800px;
+}
+
+.image-row figure:has(img.img-large) {
+  max-width: 600px;
+}
+
+/* Figure width utilities (container sizes) */
+figure.w-300 { max-width: 300px !important; }
+figure.w-400 { max-width: 400px !important; }
+figure.w-450 { max-width: 450px !important; }
+figure.w-500 { max-width: 500px !important; }
+figure.w-600 { max-width: 600px !important; }
+figure.w-800 { max-width: 800px !important; } /* use sparingly */
+
+/* Optional: only for image rows */
+.image-row figure.w-300 { max-width: 300px !important; }
+.image-row figure.w-400 { max-width: 400px !important; }
+.image-row figure.w-450 { max-width: 450px !important; }
+.image-row figure.w-500 { max-width: 500px !important; }
+.image-row figure.w-600 { max-width: 600px !important; }
+.image-row figure.w-800 { max-width: 800px !important; }

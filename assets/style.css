@@ -42,14 +42,38 @@ img {
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-video {
+/* Base figure styling (spacing + centering) */
+figure {
+  margin: 4rem auto;
+  text-align: center;
+}
+
+/* Default figure image size (manual inline sizes still work) */
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Single video rule (de-duped) */
+figure video {
   display: block;
-  margin: 1rem auto;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1000px;    /* default upper limit for player */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+html.dark-mode figcaption {
+  color: #aaa;
 }
 
 a {
@@ -93,87 +117,7 @@ html.dark-mode .project-link {
   font-weight: bold;
 }
 
-figure {
-  margin: 1rem;
-  text-align: center;
-  flex: 1 1 600px; /* <- Restored original image figure width */
-  transition: transform 0.3s ease;
-  max-width: 600px; /* <- Restored original image figure max width */
-  margin: 2rem auto;
-}
-
-/* Default figure image size */
-/* CHANGED: width:100% -> max-width:100% so manual sizes work */
-figure img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-figure video {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-}
-
-figcaption {
-  font-style: italic;
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 0.5rem;
-}
-
-html.dark-mode figcaption {
-  color: #aaa;
-}
-
-/* Toggleable Gallery Grid Layout */
-.gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  padding: 1rem 0;
-  transition: all 0.3s ease;
-}
-
-/* Gallery view figure sizing */
-.gallery-grid figure {
-  flex: 1 1 250px; /* <- Adjust gallery image flex basis */
-  max-width: 250px; /* <- Adjust gallery image max size */
-  margin: 0;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.gallery-grid.gallery--stacked {
-  flex-direction: column;
-  align-items: center;
-}
-
-.gallery-grid.gallery--stacked figure {
-  flex: 1 1 500px;
-  max-width: 90%;
-  transform: scale(1.03);
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-.gallery-grid figcaption {
-  font-style: italic;
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 0.5rem;
-}
-
-/* Toggle Button Styling */
+/* Toggle Button Styling (left as-is per your note) */
 #toggle-layout, #toggle-darkmode {
   margin: 1rem 0.5rem 1rem 0;
   padding: 0.5rem 1rem;
@@ -201,40 +145,7 @@ html.dark-mode #toggle-darkmode:hover {
   background-color: #444;
 }
 
-/* Flex wrapper for general image rows */
-.image-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-/* Image row figure sizing */
-.image-row figure {
-  flex: 1 1 400px; /* <- Adjust image row flex basis here */
-  max-width: 400px; /* <- Adjust image row max width here */
-  height: auto;
-  margin: 0;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-@media (min-width: 1000px) {
-  /* Desktop-sized gallery and image row sizing */
-  .gallery-grid figure,
-  .image-row figure {
-    flex: 1 1 400px; /* <- Adjust desktop gallery/image row flex */
-    max-width: 400px; /* <- Adjust desktop gallery/image row max width */
-  }
-
-  .gallery-grid.gallery--stacked figure {
-    flex: 1 1 600px;
-    max-width: 600px;
-  }
-}
-
-/* Responsive Adjustments for Mobile */
+/* Responsive Adjustments for Mobile (cleaned) */
 @media (max-width: 600px) {
   html, body {
     width: 95%;
@@ -251,78 +162,34 @@ html.dark-mode #toggle-darkmode:hover {
     padding: 0.75rem;
   }
 
-  figure,
-  .gallery-grid.gallery--stacked figure,
-  .gallery-grid figure,
-  .image-row figure {
-    max-width: 100%;
-  }
-
-  video {
-    max-width: 100%;
-  }
+  figure { max-width: 100%; }
+  video  { max-width: 100%; }
 }
 
-/* Custom image size classes with flexbox compatibility */
-.img-small {
-  width: 300px !important;
-  height: auto;
-  flex: 0 0 auto;
-  align-self: center;
-  max-width: none !important;
-}
-
-.img-medium {
-  width: 400px !important;
-  height: auto;
-  flex: 0 0 auto;
-  align-self: center;
-  max-width: none !important;
-}
-
-.img-large {
-  width: 600px !important;
-  height: auto;
-  flex: 0 0 auto;
-  align-self: center;
-  max-width: none !important;
-}
-
-/* Allow videos to break out of figure size limits */
-figure video {
-  width: 100%;
-  max-width: 1000px;    /* or whatever upper limit you want */
-}
-
+/* Allow videos to break out of container limits if needed */
 figure:has(video) {
-  max-width: 1000px !important; /* or whatever width you want */
+  max-width: 1000px !important; /* keep in sync with video max-width */
 }
 
-/* Optional: Keep figure wrappers close to the image size */
-.image-row figure:has(img.img-small) {
-  max-width: 350px;
+
+.project-link p {
+  margin: 0.5rem 0 0;   /* small gap above */
+  font-size: 0.9rem;    /* slightly smaller */
+  color: #555;          /* muted color */
+  padding-left: 1rem;   /* <-- creates the indent */
 }
 
-.image-row figure:has(img.img-medium) {
-  max-width: 800px;
+html.dark-mode .project-link p {
+  color: #bbb;
 }
 
-.image-row figure:has(img.img-large) {
-  max-width: 600px;
+p {
+  font-size: 18px;   /* set all paragraphs to 18px */
+  line-height: 1.6;  /* optional: improves readability */
 }
 
-/* Figure width utilities (container sizes) */
-figure.w-300 { max-width: 300px !important; }
-figure.w-400 { max-width: 400px !important; }
-figure.w-450 { max-width: 450px !important; }
-figure.w-500 { max-width: 500px !important; }
-figure.w-600 { max-width: 600px !important; }
-figure.w-800 { max-width: 800px !important; } /* use sparingly */
 
-/* Optional: only for image rows */
-.image-row figure.w-300 { max-width: 300px !important; }
-.image-row figure.w-400 { max-width: 400px !important; }
-.image-row figure.w-450 { max-width: 450px !important; }
-.image-row figure.w-500 { max-width: 500px !important; }
-.image-row figure.w-600 { max-width: 600px !important; }
-.image-row figure.w-800 { max-width: 800px !important; }
+ul, li {
+  font-size: 18px;   /* same as your <p> */
+  line-height: 1.6;  /* optional for readability */
+}
